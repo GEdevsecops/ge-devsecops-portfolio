@@ -1,5 +1,5 @@
 {
-  "name": "monorepo",
+  "name": "my-brand-monorepo",
   "private": true,
   "workspaces": [
     "apps/*",
