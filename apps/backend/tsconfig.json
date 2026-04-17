@@ -3,12 +3,10 @@
     "target": "ESNext",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "strict": true,
+    "isolatedModules": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "types": ["jest", "node"], // Add "jest" here
+    "skipLibCheck": true
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "tests/**/*"] // Ensure tests folder is included
 }
