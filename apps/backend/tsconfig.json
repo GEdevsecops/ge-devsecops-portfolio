@@ -8,5 +8,6 @@
     "types": ["jest", "node"], // Add "jest" here
     "skipLibCheck": true
   },
-  "include": ["src/**/*", "tests/**/*"] // Ensure tests folder is included
+  "include": ["src/**/*", "tests/**/*"], // //  Ensure tests folder is included
+  "exclude": ["node_modules", "dist"]
 }
