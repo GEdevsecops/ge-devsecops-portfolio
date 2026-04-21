@@ -9,7 +9,6 @@
     "test:watch": "node --experimental-vm-modules ../../node_modules/jest/bin/jest.js --watch",
     "build": "tsc",
     "start": "node dist/index.ts"
-    
   },
   "keywords": [],
   "author": "",
@@ -31,8 +30,9 @@
   "dependencies": {
     "@repo/shared": "^0.0.1",
     "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
     "drizzle-orm": "^0.45.2",
     "express": "^5.2.1",
-    "mysql2": "^3.22.0"
+    "mysql2": "^3.22.1"
   }
 }

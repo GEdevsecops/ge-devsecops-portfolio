@@ -13,5 +13,8 @@
     "build": "turbo run build",
     "test": "turbo run test",
     "lint": "turbo run lint"
+  },
+  "dependencies": {
+    "typescript": "^6.0.3"
   }
 }
