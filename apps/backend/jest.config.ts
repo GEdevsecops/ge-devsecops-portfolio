@@ -1,22 +1,14 @@
-import type { Config } from 'jest';
-
-const config: Config = {
-  preset: 'ts-jest/presets/default-esm', 
+export default {
+  preset: 'ts-jest/presets/default-esm',
   testEnvironment: 'node',
-  extensionsToTreatAsEsm: ['.ts'],
+  // 👇 The "Modern Practice" hook
+  setupFiles: ['<rootDir>/jest.setup.ts'], 
   moduleNameMapper: {
-    "^@repo/shared$": "<rootDir>/../../packages/shared/src/index.ts",
-    // This regex helps resolve internal imports if you use .js extensions in paths
-    "^(\\.{1,2}/.*)\\.js$": "$1" 
+    '^@repo/shared$': '<rootDir>/../../packages/shared/src/index.ts',
+    // This regex tells Jest: "If you see an import ending in .js, look for the .ts file"
+    '^(\\.{1,2}/.*)\\.js$': '$1', 
   },
   transform: {
-    "^.+\\.tsx?$": [
-      "ts-jest",
-      {
-        useESM: true,
-      },
-    ],
+    '^.+\\.tsx?$': ['ts-jest', { useESM: true }],
   },
 };
-
-export default config;

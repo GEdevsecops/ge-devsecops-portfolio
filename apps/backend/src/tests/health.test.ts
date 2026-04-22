@@ -1,5 +1,6 @@
 import request from "supertest";
-import app from "../index"; 
+import app from "../index.js"; 
+import { db } from "../db.js";
 import { EVENTS } from "@repo/shared";
 
 describe("Health API", () => {
