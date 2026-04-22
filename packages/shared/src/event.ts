@@ -4,4 +4,4 @@ export const EVENTS = {
   REQUEST_RECEIVED: "request_received",
   REQUEST_SUCCESS: "request_success",
   REQUEST_ERROR: "request_error"
-};
+} as const;

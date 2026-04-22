@@ -1,13 +1,19 @@
 {
   "compilerOptions": {
+    "ignoreDeprecations": "6.0",
+    "baseUrl": ".",
+    "paths": {
+      "@repo/shared": ["../../packages/shared/src/index.ts"]
+    },
     "target": "ESNext",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "isolatedModules": true,
     "esModuleInterop": true,
-    "types": ["jest", "node"], // Add "jest" here
-    "skipLibCheck": true
+    "types": ["jest", "node"],
+    "skipLibCheck": true,
+    "strict": true,
   },
-  "include": ["src/**/*", "tests/**/*"], // //  Ensure tests folder is included
+  "include": ["src/**/*", "tests/**/*"],
   "exclude": ["node_modules", "dist"]
 }

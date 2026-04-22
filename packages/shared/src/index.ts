@@ -1,5 +1,2 @@
-
-import * as TypeScript from 'typescript';
-
-export * from "./schema";
-export * from "./events";
+export * from './schema';
+export * from './event';
