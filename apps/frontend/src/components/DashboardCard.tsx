@@ -1,7 +1,14 @@
-import React from 'react';
 import { Card, CardContent, Typography, Button, Box } from '@mui/material';
 
-export default function DashboardCard({ title, status, color, onView }: any) {
+interface DashboardCardProps {
+  readonly title: string;
+  readonly status: string;
+  readonly color: string;
+  readonly onView: () => void;
+}
+
+// Remove 'readonly' from here 👇
+export default function DashboardCard({ title, status, color, onView }: DashboardCardProps) {
   return (
     <Card className="h-full border-t-4 shadow-sm" style={{ borderTopColor: color }}>
       <CardContent className="flex flex-col h-full">
@@ -14,7 +21,7 @@ export default function DashboardCard({ title, status, color, onView }: any) {
         <Button 
           variant="contained" 
           onClick={onView}
-          className="bg-slate-900 hover:bg-black normal-case shadow-none"
+          className="bg-slate-900 hover:bg-black normal-case"
         >
           View Solution
         </Button>

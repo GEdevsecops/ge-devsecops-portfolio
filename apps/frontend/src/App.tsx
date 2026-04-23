@@ -1,19 +1,26 @@
-import React, { useState } from 'react';
-import { Container, Grid, Typography, Button, Box } from '@mui/material';
+import { useState } from 'react';
+import { Container, Typography, Button, Box, Grid } from '@mui/material'; // Standard stable Grid
 import DashboardCard from './components/DashboardCard';
 import DetailModal from './components/DetailModal';
-// 1. Importing data from JSON (Config-Driven Rendering)
 import solutionsData from './data/solutions.json';
 
+// Define the interface to satisfy the linter
+interface Solution {
+  id: number;
+  title: string;
+  status: string;
+  color: string;
+}
+
 export default function App() {
-  const [selected, setSelected] = useState<any>(null);
+  const [selected, setSelected] = useState<Solution | null>(null);
 
   return (
     <Box className="bg-white min-h-screen">
-      {/* HERO SECTION */}
       <Container maxWidth="lg" className="py-20">
-        <Grid container spacing={6} alignItems="center">
-          <Grid item xs={12} md={7}>
+        {/* Use the standard 'container' and 'item' props */}
+        <Grid container spacing={6} sx={{ alignItems: 'center' }}>
+          <Grid size={{ xs: 12, md: 7 }}>
             <Typography variant="h2" className="font-black text-slate-900 mb-4">
               Building Systems That Scale.
             </Typography>
@@ -26,27 +33,30 @@ export default function App() {
               </Button>
             </Box>
           </Grid>
-          <Grid item xs={12} md={5}>
-            <Box className="bg-slate-100 p-12 rounded-3xl border border-dashed border-slate-300 text-center">
+          <Grid size={{ xs: 12, md: 5 }}>
+            <Box className="bg-slate-100 p-12 rounded-3xl border border-dashed border-slate-300 text-center text-slate-400">
               Profile Card Area
             </Box>
           </Grid>
         </Grid>
       </Container>
 
-      {/* KEY SOLUTIONS - Mapping from JSON */}
       <Container maxWidth="lg" className="pb-20">
-        <Typography variant="h4" className="font-bold mb-10">Key Solutions</Typography>
+        <Typography variant="h4" className="font-bold mb-10 text-slate-800">Key Solutions</Typography>
         <Grid container spacing={4}>
-          {solutionsData.map((s: any) => (
-            <Grid item xs={12} md={4} key={s.id}>
-              <DashboardCard {...s} onView={() => setSelected(s)} />
+          {solutionsData.map((s: Solution) => (
+            <Grid size={{ xs: 12, md: 4 }} key={s.id}>
+              <DashboardCard 
+                title={s.title}
+                status={s.status}
+                color={s.color}
+                onView={() => setSelected(s)} 
+              />
             </Grid>
           ))}
         </Grid>
       </Container>
 
-      {/* Single Modal Architecture */}
       <DetailModal 
         isOpen={!!selected} 
         handleClose={() => setSelected(null)} 
