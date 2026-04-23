@@ -1,0 +1,30 @@
+name: DevSecOps Lifecycle
+
+on:
+  push:
+    branches: [main, development]
+  pull_request:
+    branches: [main, development]
+
+jobs:
+  validate:
+    name: Clean Code & Security Audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+      
+      - name: Install
+        run: npm install
+        
+      - name: Lint (Clean Code Validation)
+        run: npm run lint
+        
+      - name: Test (Test Automation)
+        run: npm run test
+        
+      - name: Build (Staging Readiness)
+        run: npm run build
