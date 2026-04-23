@@ -1,9 +1,23 @@
 {
-  "$schema": "https://turbo.build/schema.json",
-  "pipeline": {
-    "dev": { "cache": false },
-    "build": { "dependsOn": ["^build"], "outputs": ["dist/**", "build/**"] },
-    "test": { "dependsOn": ["build"], "outputs": [] },
-    "lint": { "outputs": [] }
+  "$schema": "./.vscode/schemas/turbo.schema.json",
+  "tasks": {
+    "dev": { 
+      "cache": false,
+      "persistent": true 
+    },
+    "build": { 
+      "dependsOn": ["^build"], 
+      "outputs": ["dist/**", "build/**"] 
+    },
+    "test": { 
+      "dependsOn": ["^build"], 
+      "outputs": ["coverage/**"] 
+    },
+    "lint": { 
+      "dependsOn": ["^build"],
+      "outputs": [] 
+    },
+    "db:generate": { "cache": false },
+    "db:push": { "cache": false }
   }
 }
