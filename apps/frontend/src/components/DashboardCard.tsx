@@ -1,29 +1,32 @@
 import { Card, CardContent, Typography, Button, Box } from '@mui/material';
+import { useNavigate } from 'react-router-dom'; // For dynamic routing
 
 interface DashboardCardProps {
-  readonly title: string;
-  readonly status: string;
-  readonly color: string;
-  readonly onView: () => void;
+  id: string; // Used for routing
+  title: string;
+  status: string;
+  color: string;
+  onView: () => void;
 }
 
-// Remove 'readonly' from here 👇
-export default function DashboardCard({ title, status, color, onView }: DashboardCardProps) {
+export default function DashboardCard({ id, title, status, color }: DashboardCardProps) {
+  const navigate = useNavigate();
+
   return (
-    <Card className="h-full border-t-4 shadow-sm" style={{ borderTopColor: color }}>
-      <CardContent className="flex flex-col h-full">
-        <Box className="flex justify-between items-center mb-4">
-          <Typography variant="h6" className="font-bold text-slate-800">{title}</Typography>
-        </Box>
-        <Typography variant="body2" className="text-slate-500 flex-grow mb-4">
-          Status: {status}
+    <Card 
+      className="h-full bg-slate-900 border border-slate-800 hover:border-indigo-500 transition-all cursor-pointer group"
+      onClick={() => navigate(`/solutions/${id}`)} // Redirect logic
+    >
+      <CardContent className="p-8">
+        <Box className="w-12 h-1 w-12 rounded-full mb-6" style={{ backgroundColor: color }} />
+        <Typography variant="h5" className="font-bold text-white mb-2 group-hover:text-indigo-400">
+          {title}
         </Typography>
-        <Button 
-          variant="contained" 
-          onClick={onView}
-          className="bg-slate-900 hover:bg-black normal-case"
-        >
-          View Solution
+        <Typography variant="body2" className="text-slate-400 mb-6">
+          {status}
+        </Typography>
+        <Button className="text-indigo-400 p-0 normal-case font-bold hover:bg-transparent">
+          View Solution →
         </Button>
       </CardContent>
     </Card>

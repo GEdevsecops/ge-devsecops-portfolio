@@ -1,0 +1,14 @@
+{
+  "hero": {
+    "heading": "Build Better Digital Experiences",
+    "subHeading": "Simple, fast, and beautiful platforms that win.",
+    "paragraph": "Websites and apps that are easy to use, look great, and work fast. Get more customers with ease.",
+    "profileName": "Gabriel Ene-ita"
+  },
+  "trustedBy": ["Xcelsz", "Partner A", "Partner B", "Partner C"],
+  "solutions": [
+    { "id": "coffee", "title": "Coffee with Me", "path": "/solutions/coffee" },
+    { "id": "project", "title": "Deliver my Project", "path": "/solutions/project" },
+    { "id": "mentor", "title": "Mentor Me", "path": "/solutions/mentor" }
+  ]
+}
