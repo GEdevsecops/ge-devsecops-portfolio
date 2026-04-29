@@ -1,6 +1,9 @@
 {
-  "name": "my-brand-monorepo",
+  "name": "ge-devsecops-portfolio",
+  "version": "1.0.0",
   "private": true,
+  "author": "Gabriel Ene-ita",
+  "description": "Personal DevSecOps portfolio showcasing monorepo architecture and automated pipelines.",
   "packageManager": "npm@10.2.4",
   "workspaces": [
     "apps/*",
