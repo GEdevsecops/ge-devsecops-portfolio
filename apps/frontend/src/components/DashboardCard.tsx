@@ -1,15 +1,17 @@
 import { Card, CardContent, Typography, Button, Box } from '@mui/material';
-import { useNavigate } from 'react-router-dom'; // For dynamic routing
+import { useNavigate } from 'react-router-dom';
 
 interface DashboardCardProps {
-  id: string; // Used for routing
+  id: string;
   title: string;
   status: string;
   color: string;
   onView: () => void;
 }
 
-export default function DashboardCard({ id, title, status, color }: DashboardCardProps) {
+type ReadonlyDashboardCardProps = Readonly<DashboardCardProps>;
+
+export default function DashboardCard({ id, title, status, color, onView }: ReadonlyDashboardCardProps) {
   const navigate = useNavigate();
 
   return (
@@ -18,14 +20,20 @@ export default function DashboardCard({ id, title, status, color }: DashboardCar
       onClick={() => navigate(`/solutions/${id}`)} // Redirect logic
     >
       <CardContent className="p-8">
-        <Box className="w-12 h-1 w-12 rounded-full mb-6" style={{ backgroundColor: color }} />
+        <Box className="w-12 h-12 rounded-full mb-6" style={{ backgroundColor: color }} />
         <Typography variant="h5" className="font-bold text-white mb-2 group-hover:text-indigo-400">
           {title}
         </Typography>
         <Typography variant="body2" className="text-slate-400 mb-6">
           {status}
         </Typography>
-        <Button className="text-indigo-400 p-0 normal-case font-bold hover:bg-transparent">
+        <Button 
+          className="text-indigo-400 p-0 normal-case font-bold hover:bg-transparent"
+          onClick={(e) => {
+            e.stopPropagation();
+            onView();
+          }}
+        >
           View Solution →
         </Button>
       </CardContent>

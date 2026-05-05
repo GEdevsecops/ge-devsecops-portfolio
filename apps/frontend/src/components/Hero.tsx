@@ -1,44 +1,73 @@
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
+import { Box, Container, Grid, Typography, Button, Stack } from '@mui/material';
+import ProfileCard from './ProfileCard';
 
-function Hero() {
+const Hero = () => {
   return (
-    <Grid size={{ xs: 12, md: 7 }}>
-  {/* The Big Bold Heading */}
-  <Typography variant="h1" className="text-5xl md:text-7xl font-black mb-4 leading-[1.1] tracking-tighter">
-    <span className="text-gradient">Build Better</span> <span className="text-white">Digital</span><br />
-    <span className="text-white">Experiences</span>
-  </Typography>
-
-  {/* Refined Subheading */}
-  <Typography variant="h6" className="text-slate-300 font-bold mb-6 max-w-md leading-snug">
-    Simple, fast, and beautiful platforms that win and get real results.
-  </Typography>
-
-  {/* Description - Smaller and Grayer for contrast */}
-  <Typography variant="body1" className="text-slate-500 text-sm md:text-base max-w-lg mb-10 leading-relaxed">
-    Websites and apps that are easy to use, look great, and work fast. Get more customers with ease. No stress, no confusion — just simple, reliable solutions.
-  </Typography>
-
-  {/* Buttons - Improved Placement */}
-  <Box className="flex flex-wrap gap-4">
-    <Button 
-      variant="contained" 
-      className="bg-white text-black hover:bg-slate-200 rounded-full px-10 py-4 normal-case font-black shadow-lg shadow-white/5"
+    <Box 
+      id="home"
+      sx={{ 
+        minHeight: '90vh', 
+        display: 'flex', 
+        alignItems: 'center',
+        background: 'radial-gradient(circle at 10% 20%, rgba(0, 0, 0, 1) 0%, rgba(20, 20, 20, 1) 90%)'
+      }}
     >
-      Work with Me
-    </Button>
-    <Button 
-      variant="outlined" 
-      className="border-slate-700 text-white hover:bg-white/5 rounded-full px-10 py-4 normal-case font-bold"
-    >
-      Help Me Free
-    </Button>
-  </Box>
-    </Grid>
+      <Container maxWidth="lg">
+        <Grid container spacing={8}>
+          {/* LEFT COLUMN: Text Content */}
+          <Grid size={{ xs: 12, md: 7 }}>
+            <Stack spacing={4}>
+              <Typography variant="overline" sx={{ color: 'primary.main', fontWeight: 700, letterSpacing: 3 }}>
+                AGILE DEVSECOPS ENGINEER
+              </Typography>
+              
+              <Typography variant="h1" sx={{ 
+                fontSize: { xs: '3rem', md: '5rem' }, 
+                fontWeight: 900,
+                lineHeight: 1.1,
+                letterSpacing: '-0.02em'
+              }}>
+                Gabriel <Box component="span" sx={{ color: 'primary.main' }}>Ene-ita</Box>
+              </Typography>
+
+              <Typography variant="body1" sx={{ fontSize: '1.25rem', color: 'text.secondary', maxWidth: '500px' }}>
+                Building secure, automated, and high-performance digital experiences with a focus on full-lifecycle engineering.
+              </Typography>
+
+              <Stack direction="row" spacing={2}>
+                <Button variant="contained" size="large" sx={{ px: 4, py: 1.5, borderRadius: '8px' }}>
+                  View Projects
+                </Button>
+                <Button variant="outlined" size="large" sx={{ px: 4, py: 1.5, borderRadius: '8px' }}>
+                  Contact Me
+                </Button>
+              </Stack>
+            </Stack>
+          </Grid>
+
+          {/* RIGHT COLUMN: Profile Card Placement */}
+          <Grid size={{ xs: 12, md: 5 }} sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Box sx={{ 
+              position: 'relative',
+              '&::after': { // This adds a subtle glow behind your card
+                content: '""',
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: '120%',
+                height: '120%',
+                background: 'radial-gradient(circle, rgba(25, 118, 210, 0.15) 0%, transparent 70%)',
+                zIndex: -1
+              }
+            }}>
+              <ProfileCard />
+            </Box>
+          </Grid>
+        </Grid>
+      </Container>
+    </Box>
   );
-}
+};
 
 export default Hero;

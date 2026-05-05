@@ -1,56 +1,17 @@
-/* Custom CSS - No Tailwind needed */
-
-body{
-  background-color: #05070A;
-  margin: 0;
-  font-family: 'inter', sans-serif;
-}
-
 :root {
-  /* Core Brand Colors - Matches your image exactly */
-  --bg: #05070A;           /* Deep Midnight Black */
-  --text: #94A3B8;         /* Slate Gray for readability */
-  --text-h: #FFFFFF;       /* Pure White for headings */
-  --border: #1E293B;       /* Subtle border color */
-  --accent: #3B82F6;       /* Brand Blue */
-  --accent-purple: #A855F7;/* Brand Purple */
-  --accent-bg: rgba(59, 130, 246, 0.1);
-  --code-bg: #0F172A;
-  
-  --sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --heading: 'Inter', system-ui, sans-serif;
-
-  font: 18px/150% var(--sans);
-  color: var(--text);
-  background: var(--bg);
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-}
-
-
-
-#root {
-  /* Remove the 1126px restriction to let the Hero section breathe */
-  width: 100%; 
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  /* This creates a font that scales based on screen width */
+  /* clamp(minimum, preferred, maximum) */
+  --font-size-hero: clamp(2.8rem, 10vw, 5.5rem);
+  --font-size-section: clamp(1.8rem, 5vw, 3rem);
 }
 
 h1 {
-  font-family: var(--heading);
-  font-size: clamp(2.5rem, 8vw, 4.5rem); /* Responsive font sizing */
+  font-size: var(--font-size-hero);
   font-weight: 900;
-  letter-spacing: -0.04em;
-  color: var(--text-h);
-  line-height: 1.1;
-}
-
-/* Gradient Text Class for your "Build Better Digital Experiences" */
-.text-gradient {
-  background: linear-gradient(to right, #3B82F6, #A855F7);
-  -webkit-background-clip: text;
+  line-height: 1.0; /* Tight line height makes it look modern */
+  letter-spacing: -0.05em;
+  background: linear-gradient(to bottom right, #ffffff 30%, #94a3b8 100%);
   background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
