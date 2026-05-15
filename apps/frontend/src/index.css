@@ -5,6 +5,28 @@
   --font-size-section: clamp(1.8rem, 5vw, 3rem);
 }
 
+/* index.css refinements */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #000; /* Deep black for that tech aesthetic */
+  color: #fff;
+  overflow-x: hidden; /* Stops horizontal "shaking" on mobile */
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+#root {
+  width: 100%;
+}
+
+
+
 h1 {
   font-size: var(--font-size-hero);
   font-weight: 900;
@@ -14,4 +36,16 @@ h1 {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+h1, h2, h3, p {
+  margin-top: 0; /* Removes the "invisible gap" at the top[cite: 1] */
+}
+
+/* If you have a Navbar, ensure it doesn't push the Hero down too far */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }

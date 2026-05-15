@@ -1,73 +1,60 @@
-import { Box, Container, Grid, Typography, Button, Stack } from '@mui/material';
+import { Container, Box } from '@mui/material';
 import ProfileCard from './ProfileCard';
+import HeroBranding from './HeroBranding';
+import { HeroBackground } from './HeroBackground'; 
 
 const Hero = () => {
   return (
-    <Box 
-      id="home"
-      sx={{ 
-        minHeight: '90vh', 
-        display: 'flex', 
-        alignItems: 'center',
-        background: 'radial-gradient(circle at 10% 20%, rgba(0, 0, 0, 1) 0%, rgba(20, 20, 20, 1) 90%)'
-      }}
-    >
-      <Container maxWidth="lg">
-        <Grid container spacing={8}>
-          {/* LEFT COLUMN: Text Content */}
-          <Grid size={{ xs: 12, md: 7 }}>
-            <Stack spacing={4}>
-              <Typography variant="overline" sx={{ color: 'primary.main', fontWeight: 700, letterSpacing: 3 }}>
-                AGILE DEVSECOPS ENGINEER
-              </Typography>
-              
-              <Typography variant="h1" sx={{ 
-                fontSize: { xs: '3rem', md: '5rem' }, 
-                fontWeight: 900,
-                lineHeight: 1.1,
-                letterSpacing: '-0.02em'
-              }}>
-                Gabriel <Box component="span" sx={{ color: 'primary.main' }}>Ene-ita</Box>
-              </Typography>
+    <HeroBackground>
+      <Container 
+        maxWidth="xl" 
+        sx={{ 
+          py: { xs: 8, md: 0 },
+          minHeight: '80vh', // Ensures the background feels substantial
+          display: 'flex',
+          alignItems: 'center'
+        }}
+      >
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: { xs: 'column', md: 'row' },
+            alignItems: 'center', // center ensures the vertical midpoint of the Branding matches the midpoint of the Card
+            // Changed to 'space-between' to push elements to opposite edges
+            justifyContent: 'space-between',
+            width: '100%',
+            gap: { xs: 6, md: 4 } 
+          }}
+        >
+          {/* LANE 1: THE BRANDING (Takes up more space) */}
+          <Box sx={{ 
+            flex: { xs: '1 1 auto', md: 1.4 }, // Increased weight to push right
+            zIndex: 2,
+            display: 'flex',
+            justifyContent: 'flex-start' // Ensure branding stays on the left
+          }}>
+            <HeroBranding />
+          </Box>
 
-              <Typography variant="body1" sx={{ fontSize: '1.25rem', color: 'text.secondary', maxWidth: '500px' }}>
-                Building secure, automated, and high-performance digital experiences with a focus on full-lifecycle engineering.
-              </Typography>
-
-              <Stack direction="row" spacing={2}>
-                <Button variant="contained" size="large" sx={{ px: 4, py: 1.5, borderRadius: '8px' }}>
-                  View Projects
-                </Button>
-                <Button variant="outlined" size="large" sx={{ px: 4, py: 1.5, borderRadius: '8px' }}>
-                  Contact Me
-                </Button>
-              </Stack>
-            </Stack>
-          </Grid>
-
-          {/* RIGHT COLUMN: Profile Card Placement */}
-          <Grid size={{ xs: 12, md: 5 }} sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Box sx={{ 
-              position: 'relative',
-              '&::after': { // This adds a subtle glow behind your card
-                content: '""',
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-                width: '120%',
-                height: '120%',
-                background: 'radial-gradient(circle, rgba(25, 118, 210, 0.15) 0%, transparent 70%)',
-                zIndex: -1
-              }
-            }}>
+          {/* LANE 2: THE PROFILE CARD (Pushed to the far right) */}
+          <Box
+            sx={{
+              flex: { xs: '1 1 auto', md: 0.6 }, // Takes up less 'lane' space
+              display: 'flex',
+              // Force the card to the right edge on desktop
+              justifyContent: { xs: 'center', md: 'flex-end' }, 
+              width: '100%',
+              zIndex: 1
+            }}
+          >
+            <Box sx={{ width: '100%', maxWidth: '420px' }}>
               <ProfileCard />
             </Box>
-          </Grid>
-        </Grid>
+          </Box>
+        </Box>
       </Container>
-    </Box>
+    </HeroBackground>
   );
 };
 
-export default Hero;
+export default Hero; 
