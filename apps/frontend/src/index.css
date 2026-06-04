@@ -12,6 +12,15 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* This prevents the fixed navbar from covering the top of your sections */
+[id] {
+  scroll-margin-top: 80px; 
+}
+
 body {
   background-color: #000; /* Deep black for that tech aesthetic */
   color: #fff;
