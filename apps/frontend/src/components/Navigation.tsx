@@ -75,7 +75,7 @@ export default function Navigation() {
 
           {/* DESKTOP LINKS */}
           <Stack direction="row" sx={{ display: { xs: 'none', md: 'flex' }, gap: 4, alignItems: 'center' }}>
-            {['Experience', 'Skills', 'Building'].map((item) => (
+            {['Projects', 'Engineering', 'Building'].map((item) => (
               <Box
                 key={item}
                 component="a"
