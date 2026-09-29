@@ -1,0 +1,28 @@
+{
+  "personalInfo": {
+    "name": "Gabriel Ene-ita",
+    "title": "Agile DevSecOps Engineer",
+    "location": "Lagos, Nigeria",
+    "email": "gabriel@example.com",
+    "tagline": "Architecting Secure, Scalable, and High-Performance Digital Experiences"
+  },
+  "stats": {
+    "projectsCompleted": "12+",
+    "peopleHelped": "100+",
+    "experienceYears": "2+"
+  },
+  "services": [
+    {
+      "title": "CI/CD Pipeline Automation",
+      "description": "Building robust deployment workflows using GitHub Actions and Turbo."
+    },
+    {
+      "title": "Cloud Infrastructure",
+      "description": "Scaling applications on Vercel, Railway, and AWS."
+    },
+    {
+      "title": "Security & Recovery",
+      "description": "Implementing DevSecOps principles to protect data and ensure zero downtime."
+    }
+  ]
+}

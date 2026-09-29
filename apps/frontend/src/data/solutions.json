@@ -1,0 +1,23 @@
+[
+  { 
+    "id": 1, 
+    "title": "Coffee with Me", 
+    "status": "System Active", 
+    "color": "#60a5fa",
+    "direction": "Engineering agile networking & technical collaboration pipelines."
+  },
+  { 
+    "id": 2, 
+    "title": "Deliver my Project", 
+    "status": "Beta Phase", 
+    "color": "#2563eb",
+    "direction": "Automated CI/CD deployment logic for scalable web applications."
+  },
+  { 
+    "id": 3, 
+    "title": "Mentor Me", 
+    "status": "Secure Node", 
+    "color": "#10b981",
+    "direction": "Full-stack knowledge transfer protocols and code review systems."
+  }
+]

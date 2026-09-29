@@ -1,11 +1,10 @@
-import 'dotenv/config';
 import { defineConfig } from 'drizzle-kit';
 
 export default defineConfig({
+  schema: '../../packages/shared/src/db/schema.ts', // Pointing to your shared package
   out: './drizzle',
-  schema: '../../packages/shared/src/schema.ts',
   dialect: 'mysql',
   dbCredentials: {
-    url: process.env.DATABASE_URL!,
+    url: process.env.DATABASE_URL || '',
   },
 });

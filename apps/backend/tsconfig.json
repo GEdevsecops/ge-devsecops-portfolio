@@ -3,8 +3,7 @@
     "target": "ESNext",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "ignoreDeprecations": "6.0",
-    "baseUrl": ".",
+    "outDir": "./dist",
     "paths": {
       "@repo/shared": ["../../packages/shared/src/index.ts"]
     },
@@ -14,6 +13,6 @@
     "skipLibCheck": true,
     "strict": true
   },
-  "include": ["src/**/*", "tests/**/*"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }

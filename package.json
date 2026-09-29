@@ -1,21 +1,27 @@
 {
-  "name": "my-brand-monorepo",
+  "name": "ge-devsecops-portfolio",
+  "version": "1.0.0",
   "private": true,
+  "author": "Gabriel Ene-ita",
+  "description": "Personal DevSecOps portfolio showcasing monorepo architecture and automated pipelines.",
+  "packageManager": "npm@10.2.4",
   "workspaces": [
     "apps/*",
     "packages/*"
   ],
-  "devDependencies": {
-    "@jest/globals": "^30.3.0",
-    "turbo": "^1.12.0"
-  },
   "scripts": {
-    "dev": "turbo run dev",
-    "build": "turbo run build",
-    "test": "turbo run test",
-    "lint": "turbo run lint"
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "test": "turbo test",
+    "lint": "turbo lint",
+    "format": "prettier --write .",
+    "db:generate": "turbo db:generate",
+    "db:push": "turbo db:push",
+    "validate": "turbo lint test build"
   },
-  "dependencies": {
-    "typescript": "^6.0.3"
+  "devDependencies": {
+    "prettier": "^3.2.0",
+    "turbo": "^2.0.0",
+    "typescript": "^5.4.5"
   }
 }
