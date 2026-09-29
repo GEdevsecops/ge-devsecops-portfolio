@@ -18,7 +18,7 @@ const socialLinks = [
     id: 'email',
     Icon: Email,
     label: 'Email',
-    href: 'mailto:eneitagabriel@gmail.com',
+    href: 'https://mail.google.com/mail/?view=cm&fs=1&to=eneitagabriel@gmail.com',
   },
 ];
 
@@ -65,14 +65,20 @@ export default function FooterContainer() {
             opportunity? You can find me through the links below.
           </Typography>
 
-          <Stack direction="row" spacing={1.5}>
+          <Stack
+            direction="row"
+            spacing={1.5}
+            sx={{
+              alignItems: 'center',
+            }}
+          >
             {socialLinks.map(({ id, Icon, label, href }) => (
               <IconButton
                 key={id}
                 component="a"
                 href={href}
-                target={id === 'email' ? undefined : '_blank'}
-                rel={id === 'email' ? undefined : 'noopener noreferrer'}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={label}
                 size="medium"
                 sx={{
@@ -90,6 +96,22 @@ export default function FooterContainer() {
                 <Icon />
               </IconButton>
             ))}
+
+            <Typography
+              component="a"
+              href="mailto:eneitagabriel@gmail.com"
+              sx={{
+                color: 'rgba(255,255,255,0.7)',
+                textDecoration: 'none',
+                fontSize: '0.95rem',
+                ml: 1,
+                '&:hover': {
+                  color: '#2563eb',
+                },
+              }}
+            >
+              eneitagabriel@gmail.com
+            </Typography>
           </Stack>
 
           <Typography
