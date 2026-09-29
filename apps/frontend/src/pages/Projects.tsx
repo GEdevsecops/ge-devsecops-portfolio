@@ -20,7 +20,7 @@ const projects = [
   }
 ];
 
-export default function Building() {
+export default function Projects() {
   const brandFeatures = [
     "Turborepo Monorepo Architecture",
     "Integrated Jest Automation Suite",

@@ -20,18 +20,16 @@ export default function Navigation() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
-
   /**
-   * Smoothly scrolls to the section with id="footer" or "connect".
    */
   const handleConnect = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault(); 
     
-    const element = document.getElementById('footer');
+    const element = document.getElementById('connect');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     } else {
-      console.error('Observation Error: Could not find element with id "footer".');
+      console.error('Observation Error: Could not find element with id "connect".');
     }
   };
 
