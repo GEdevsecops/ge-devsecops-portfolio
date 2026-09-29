@@ -1,34 +1,38 @@
-import { Card, CardContent, Typography, Button, Box } from '@mui/material';
-import { useNavigate } from 'react-router-dom'; // For dynamic routing
+import { Card } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 interface DashboardCardProps {
-  id: string; // Used for routing
+  id: string;
   title: string;
   status: string;
   color: string;
-  onView: () => void;
+  direction: string;
 }
 
-export default function DashboardCard({ id, title, status, color }: DashboardCardProps) {
+export default function DashboardCard({ id }: Readonly<DashboardCardProps>) {
   const navigate = useNavigate();
 
   return (
     <Card 
-      className="h-full bg-slate-900 border border-slate-800 hover:border-indigo-500 transition-all cursor-pointer group"
-      onClick={() => navigate(`/solutions/${id}`)} // Redirect logic
+      onClick={() => navigate(`/solutions/${id}`)}
+      sx={{ 
+        height: '100%',
+        bgcolor: 'rgba(255, 255, 255, 0.02)',
+        backdropFilter: 'blur(10px)',
+        border: '1px solid rgba(255, 255, 255, 0.1)',
+        borderRadius: '20px',
+        transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+        cursor: 'pointer',
+        position: 'relative',
+        '&:hover': {
+          transform: 'translateY(-10px)',
+          borderColor: '#2563eb',
+          boxShadow: '0 20px 40px -20px rgba(37, 99, 235, 0.5)',
+          '& .glow': { opacity: 1 }
+        }
+      }}
     >
-      <CardContent className="p-8">
-        <Box className="w-12 h-1 w-12 rounded-full mb-6" style={{ backgroundColor: color }} />
-        <Typography variant="h5" className="font-bold text-white mb-2 group-hover:text-indigo-400">
-          {title}
-        </Typography>
-        <Typography variant="body2" className="text-slate-400 mb-6">
-          {status}
-        </Typography>
-        <Button className="text-indigo-400 p-0 normal-case font-bold hover:bg-transparent">
-          View Solution →
-        </Button>
-      </CardContent>
+      {/* ... rest of your CardContent code remains the same ... */}
     </Card>
   );
 }

@@ -1,44 +1,59 @@
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
+import { Container, Box } from '@mui/material';
+import ProfileCard from './ProfileCard';
+import HeroBranding from './HeroBranding';
+import { HeroBackground } from './HeroBackground'; 
 
-function Hero() {
+const Hero = () => {
   return (
-    <Grid size={{ xs: 12, md: 7 }}>
-  {/* The Big Bold Heading */}
-  <Typography variant="h1" className="text-5xl md:text-7xl font-black mb-4 leading-[1.1] tracking-tighter">
-    <span className="text-gradient">Build Better</span> <span className="text-white">Digital</span><br />
-    <span className="text-white">Experiences</span>
-  </Typography>
+    <HeroBackground>
+      <Container 
+         id = "hero"
+        maxWidth="xl" 
+        sx={{ 
+          minHeight: '100vh', 
+          display: 'flex',
+          alignItems: 'center',
+          position: 'relative',
+          px: { xs: 2, sm: 4, md: 6 } 
+        }}
+      >
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: { xs: 'column', md: 'row' },
+            alignItems: 'center',
+            // CHANGE: Center the content group so they "hug" each other
+            justifyContent: 'center', 
+            width: '100%',
+            // CHANGE: Tightened gap to remove the "weird space"
+            gap: { xs: 4, md: 8, lg: 12 }, 
+            pb: { md: 10 }
+          }}
+        >
+          {/* LANE 1: THE BRANDING */}
+          <Box sx={{ 
+            flex: { xs: '1 1 auto', md: '0 1 600px' }, // Cap the growth
+            zIndex: 2,
+            textAlign: 'left'
+          }}>
+            <HeroBranding />
+          </Box>
 
-  {/* Refined Subheading */}
-  <Typography variant="h6" className="text-slate-300 font-bold mb-6 max-w-md leading-snug">
-    Simple, fast, and beautiful platforms that win and get real results.
-  </Typography>
-
-  {/* Description - Smaller and Grayer for contrast */}
-  <Typography variant="body1" className="text-slate-500 text-sm md:text-base max-w-lg mb-10 leading-relaxed">
-    Websites and apps that are easy to use, look great, and work fast. Get more customers with ease. No stress, no confusion — just simple, reliable solutions.
-  </Typography>
-
-  {/* Buttons - Improved Placement */}
-  <Box className="flex flex-wrap gap-4">
-    <Button 
-      variant="contained" 
-      className="bg-white text-black hover:bg-slate-200 rounded-full px-10 py-4 normal-case font-black shadow-lg shadow-white/5"
-    >
-      Work with Me
-    </Button>
-    <Button 
-      variant="outlined" 
-      className="border-slate-700 text-white hover:bg-white/5 rounded-full px-10 py-4 normal-case font-bold"
-    >
-      Help Me Free
-    </Button>
-  </Box>
-    </Grid>
+          {/* LANE 2: THE PROFILE CARD */}
+          <Box
+            sx={{
+              flex: { xs: '1 1 auto', md: '0 0 420px' }, // Fix the card width
+              zIndex: 1,
+              display: 'flex',
+              justifyContent: 'center'
+            }}
+          >
+            <ProfileCard />
+          </Box>
+        </Box>
+      </Container>
+    </HeroBackground>
   );
-}
+};
 
 export default Hero;
