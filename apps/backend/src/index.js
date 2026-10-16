@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import { EVENTS } from "@repo/shared"; // Don't forget our bridge!
+import { EVENTS } from "@ge/shared"; // Don't forget our bridge!
 const app = express();
 const PORT = 3001;
 app.use(cors());

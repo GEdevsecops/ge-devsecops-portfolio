@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import { drizzle } from "drizzle-orm/mysql2";
 import mysql from "mysql2/promise";
-import * as schema from "@repo/shared";
+import * as schema from "@ge/shared";
 const connectionString = process.env.DATABASE_URL;
 // This check is great for production, but we make it "Test-Friendly"
 if (!connectionString) {

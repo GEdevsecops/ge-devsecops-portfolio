@@ -1,5 +1,5 @@
 {
-  "name": "@repo/shared",
+  "name": "@ge/shared",
   "version": "0.0.1",
   "type": "module",
   "main": "./src/index.ts",
@@ -15,7 +15,7 @@
     "drizzle-orm": "^0.45.2"
   },
   "devDependencies": {
-    "typescript": "^5.4.5",
-    "@types/node": "^20.0.0"
+    "@types/node": "^20.0.0",
+    "typescript": "^5.4.5"
   }
 }
