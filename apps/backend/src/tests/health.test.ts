@@ -1,7 +1,7 @@
 import request from "supertest";
 import app from "../index.js"; 
 import { db } from "../db.js";
-import { EVENTS } from "@repo/shared";
+import { EVENTS } from "@ge/shared";
 
 describe("Health API", () => {
   it("should return 200 OK", async () => {

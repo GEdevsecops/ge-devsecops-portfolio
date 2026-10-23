@@ -1,3 +1,4 @@
+
 import { Box, Container, Typography, Grid, Paper, Stack } from "@mui/material";
 import { Code, Storage, Security, Settings } from "@mui/icons-material";
 
@@ -73,32 +74,21 @@ export default function Building() {
             mb: 6,
             letterSpacing: "-0.02em",
             fontSize: { xs: "2.2rem", md: "3rem" },
+            textAlign: { xs: "center", md: "left" },
           }}
         >
-          BUILDING{" "}
-          <Box
-            component="span"
-            sx={{
-              color: "#2563eb",
-              fontFamily: "monospace",
-              display: { xs: "block", sm: "inline" },
-            }}
-          >
-          </Box>
+          BUILDING
         </Typography>
 
         <Grid container spacing={3}>
           {capabilityGroups.map((group) => (
-            <Grid
-              key={group.category}
-              size={{ xs: 12, md: 6 }}
-            >
+            <Grid key={group.category} size={{ xs: 12, md: 6 }}>
               <Paper
                 elevation={0}
                 sx={{
                   p: 4,
                   bgcolor: "rgba(2, 6, 23, 0.4)",
-                  border: "1px solid rgba(255,255,255,0.05)",
+                  border: "1px solid rgba(255, 255, 255, 0.05)",
                   borderRadius: 4,
                   height: "100%",
                   backdropFilter: "blur(10px)",
@@ -154,8 +144,8 @@ export default function Building() {
                       sx={{
                         px: 2,
                         py: 0.5,
-                        bgcolor: "rgba(37,99,235,0.05)",
-                        border: "1px solid rgba(37,99,235,0.2)",
+                        bgcolor: "rgba(37, 99, 235, 0.05)",
+                        border: "1px solid rgba(37, 99, 235, 0.2)",
                         borderRadius: "4px",
                         color: "#93c5fd",
                         fontSize: "0.8rem",
