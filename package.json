@@ -20,8 +20,13 @@
     "validate": "turbo lint test build"
   },
   "devDependencies": {
+    "jest": "^29.7.0",
     "prettier": "^3.2.0",
+    "ts-jest": "^29.4.15",
     "turbo": "^2.0.0",
     "typescript": "^5.4.5"
+  },
+  "overrides": {
+    "qs": "6.16.1"
   }
 }

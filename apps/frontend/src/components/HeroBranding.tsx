@@ -88,7 +88,8 @@ const HeroBranding = () => {
       {/* 4. Action CTA */}
       <Box sx={{ pt: 1 }}>
         <Button
-          component={motion.button}
+          component={motion.a}
+          href="#engineering"
           whileHover={{ scale: 1.03, boxShadow: '0 0 25px rgba(37, 99, 235, 0.4)' }}
           whileTap={{ scale: 0.98 }}
           variant="contained"

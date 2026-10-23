@@ -1,12 +1,12 @@
+
+
 {
   "compilerOptions": {
     "target": "ESNext",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
+    "rootDir": "./src",
     "outDir": "./dist",
-    "paths": {
-      "@repo/shared": ["../../packages/shared/src/index.ts"]
-    },
     "isolatedModules": true,
     "esModuleInterop": true,
     "types": ["jest", "node"],
