@@ -13,10 +13,10 @@ import {
 import { Menu as MenuIcon, Close as CloseIcon } from '@mui/icons-material';
 import { Button } from './Button';
 
-type NavSectionId = 'projects' | 'engineering' | 'building';
+type NavSectionId = 'projects' | 'engineering' | 'skills';
 type SectionId = 'hero' | NavSectionId | 'connect';
 
-const NAV_ITEMS: NavSectionId[] = ['projects', 'engineering', 'building'];
+const NAV_ITEMS: NavSectionId[] = ['projects', 'engineering', 'skills'];
 const OBSERVED_IDS: SectionId[] = ['hero', ...NAV_ITEMS, 'connect'];
 
 // Type guard for navigation section IDs.
