@@ -54,10 +54,10 @@ const capabilityGroups = [
   },
 ];
 
-export default function Building() {
+export default function skills() {
   return (
     <Box
-      id="building"
+      id="skills"
       component="section"
       sx={{
         py: 12,
@@ -77,7 +77,7 @@ export default function Building() {
             textAlign: { xs: "center", md: "left" },
           }}
         >
-          BUILDING
+          SKILLS
         </Typography>
 
         <Grid container spacing={3}>

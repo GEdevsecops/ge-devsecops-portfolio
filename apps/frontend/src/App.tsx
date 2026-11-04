@@ -4,7 +4,7 @@ import Navigation from './components/Navigation';
 import HeroSection from './components/Hero';
 import Engineering from './pages/Engineering';
 import Projects from './pages/Projects';
-import Building from './pages/Building';
+import Skills from './pages/Skills';
 import FooterContainer from './containers/FooterContainer';
 
 const darkTheme = createTheme({
@@ -52,7 +52,7 @@ export default function App() {
           <HeroSection />
           <Engineering />
           <Projects />
-          <Building />
+          <Skills />
         </Box>
 
         <FooterContainer />
