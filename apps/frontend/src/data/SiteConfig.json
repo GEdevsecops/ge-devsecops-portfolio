@@ -1,14 +1,28 @@
 {
-  "hero": {
-    "heading": "Build Better Digital Experiences",
-    "subHeading": "Simple, fast, and beautiful platforms that win.",
-    "paragraph": "Websites and apps that are easy to use, look great, and work fast. Get more customers with ease.",
-    "profileName": "Gabriel Ene-ita"
+  "personalInfo": {
+    "name": "Gabriel Ene-ita",
+    "title": "Agile DevSecOps Engineer",
+    "location": "Lagos, Nigeria",
+    "email": "gabriel@example.com",
+    "tagline": "Architecting Secure, Scalable, and High-Performance Digital Experiences"
   },
-  "trustedBy": ["Xcelsz", "Partner A", "Partner B", "Partner C"],
-  "solutions": [
-    { "id": "coffee", "title": "Coffee with Me", "path": "/solutions/coffee" },
-    { "id": "project", "title": "Deliver my Project", "path": "/solutions/project" },
-    { "id": "mentor", "title": "Mentor Me", "path": "/solutions/mentor" }
+  "stats": {
+    "projectsCompleted": "12+",
+    "peopleHelped": "100+",
+    "experienceYears": "2+"
+  },
+  "services": [
+    {
+      "title": "CI/CD Pipeline Automation",
+      "description": "Building robust deployment workflows using GitHub Actions and Turbo."
+    },
+    {
+      "title": "Cloud Infrastructure",
+      "description": "Scaling applications on Vercel, Railway, and AWS."
+    },
+    {
+      "title": "Security & Recovery",
+      "description": "Implementing DevSecOps principles to protect data and ensure zero downtime."
+    }
   ]
 }
